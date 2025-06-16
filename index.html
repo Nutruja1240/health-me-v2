@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Me V.2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">HM</div>
+            <h1>Health Me V.2</h1>
+            <p>โปรแกรมประเมินสุขภาพและสมรรถภาพร่างกาย</p>
+        </div>
+        
+        <div class="form-section">
+            <h2>ข้อมูลพื้นฐาน</h2>
+            <div class="form-group">
+                <label for="age">อายุ (ปี)</label>
+                <input type="number" id="age" min="1" max="120" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">เพศ</label>
+                <select id="gender" required>
+                    <option value="">เลือกเพศ</option>
+                    <option value="male">ชาย</option>
+                    <option value="female">หญิง</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="weight">น้ำหนัก (กิโลกรัม)</label>
+                <input type="number" id="weight" min="1" max="300" step="0.1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="height">ส่วนสูง (เซนติเมตร)</label>
+                <input type="number" id="height" min="50" max="300" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="waist">รอบเอว (เซนติเมตร)</label>
+                <input type="number" id="waist" min="30" max="200" required>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h2>ผลทดสอบสมรรถภาพร่างกาย</h2>
+            
+            <div class="form-group">
+                <label for="grip">แรงบีบมือ (กิโลกรัม)</label>
+                <input type="number" id="grip" min="0" max="100" step="0.1">
+            </div>
+            
+            <div class="form-group">
+                <label for="sit_and_reach">การนั่งงอตัวไปข้างหน้า (เซนติเมตร)</label>
+                <input type="number" id="sit_and_reach" min="-10" max="50">
+            </div>
+            
+            <div class="form-group">
+                <label for="sit_up">การซิตอัพ 30 วินาที (ครั้ง)</label>
+                <input type="number" id="sit_up" min="0" max="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="chair_stand">ยืน-นั่งบนเก้าอี้ 60 วินาที (ครั้ง)</label>
+                <input type="number" id="chair_stand" min="0" max="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="step_test">ยืนยกเข่าขึ้นลง 3 นาที (ครั้ง)</label>
+                <input type="number" id="step_test" min="0" max="300">
+            </div>
+            
+            <button id="calculate-btn">คำนวณผล</button>
+        </div>
+        
+        <div class="result-section" id="result-section">
+            <h2>ผลการประเมิน</h2>
+            
+            <div id="bmi-result" class="result-item"></div>
+            <div id="waist-result" class="result-item"></div>
+            <div id="grip-result" class="result-item"></div>
+            <div id="sit_and_reach-result" class="result-item"></div>
+            <div id="sit_up-result" class="result-item"></div>
+            <div id="chair_stand-result" class="result-item"></div>
+            <div id="step_test-result" class="result-item"></div>
+            
+            <div class="action-buttons">
+                <button class="save-btn" id="save-btn">บันทึกผล</button>
+                <button class="share-btn" id="share-btn">แชร์ผล</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            โดย กลุ่มงานสุขศึกษา โรงพยาบาลพุทธโสธร
+        </div>
+    </div>
+
+    <script src="js/evaluations.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
